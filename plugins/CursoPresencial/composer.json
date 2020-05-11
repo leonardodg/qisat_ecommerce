@@ -1,0 +1,23 @@
+{
+    "name": "your-name-here/CursoPresencial",
+    "description": "CursoPresencial plugin for CakePHP",
+    "type": "cakephp-plugin",
+    "require": {
+        "php": ">=5.4.16",
+        "cakephp/cakephp": "~3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "CursoPresencial\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CursoPresencial\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}

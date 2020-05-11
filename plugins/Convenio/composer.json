@@ -1,0 +1,23 @@
+{
+    "name": "your-name-here/Convenio",
+    "description": "Convenio plugin for CakePHP",
+    "type": "cakephp-plugin",
+    "require": {
+        "php": ">=5.4.16",
+        "cakephp/cakephp": "~3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Convenio\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Convenio\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}

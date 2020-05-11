@@ -1,0 +1,17 @@
+.divSortable {
+    cursor: pointer;
+    font-size: 10px;
+    text-align: center;
+    min-height: 111px;
+}
+.divSortable img{
+    margin: 2px 0 0 0;
+    max-width: 61px;
+}
+.ui-sortable-handle{
+    list-style: none;
+    float: left;
+    width: 24%;
+    border: 1px solid #d3d3d3;
+    margin: 3px 3px 0 0;
+}

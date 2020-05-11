@@ -1,0 +1,727 @@
+body{
+    background: #DFDFDF;
+}
+.menu-title {
+    padding-left: 24px;
+}
+
+#menu-accordion .ui-accordion-content {
+    padding: 0;
+    padding-top: 10px;
+}
+
+#menu-accordion .ui-accordion-content ul{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#menu-accordion .ui-accordion-content li{
+    padding-left: 0px;
+    padding-bottom: 10px;
+    list-style-type: none;
+}
+
+#actions-sidebar{
+    margin-left: 0px;
+    background: #494949;
+}
+.ui-accordion .ui-accordion-icons{
+    background: #494949;
+    color:rgba(255,255,255,0.6);
+}
+.ui-accordion .ui-accordion-icons:hover{
+    background: #3D3D3D;
+    color:#FFFFFF;
+}
+#actions-sidebar{
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-top: 43px;
+    background: #4E4E4E;
+}
+#menu-accordion h3{
+    border-width: 0px;
+    padding: 10px 30px;
+}
+
+#menu-accordion .ui-accordion-content{
+    background: #494949;
+}
+#menu-accordion .ui-accordion-content a{
+    color:#FFFFFF;
+}
+
+#menu-accordion .ui-widget-content{
+    border-width: 0px;
+}
+#menu-accordion .ui-accordion-content li{
+    padding: 15px 10px;
+}
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.top-bar.expanded .title-area{
+    background: #FFF;
+    padding-left: 0px;
+}
+.top-bar.expanded .title-area a {
+    color: #008CBA;
+}
+.top-bar.expanded .title-area a:hover {
+    color: #0078a0;
+    text-decoration: none;
+}
+.top-bar.expanded{
+    float: left;
+    border-top: 3px solid #005285;
+    display: inline-block;
+    width: 100%;
+    background: #fff;
+    display: inline-block;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    z-index: 200;
+    right: 0;
+    left: 0;
+    top: 0;
+    transition: transform 200ms linear;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3),0 2px 2px 0 rgba(0,0,0,0.2) !important;
+}
+.top-bar-section li:not(.has-form) a:not(.button){
+    background: #FFF;
+    color: #008CBA;
+    padding: 7px 15px;
+    transition:all 0.5s;
+}
+.top-bar-section li:not(.has-form) a:hover:not(.button){
+    color: #0078a0;
+    text-decoration: none;
+    background: #F5F5F5;
+}
+.top-bar-section li:not(.has-form) a, .top-bar.expanded .title-area li a{
+    padding: 7px 15px;
+    float: left;
+    font-size: 1rem;
+}
+#container{
+    margin-top:35px;
+    box-shadow: -4px 0px 6px 0 rgba(0,0,0,0.2) !important;
+    background: #DFDFDF;
+    position: relative;
+    float: left;
+    min-height: 100vh;
+}
+.container{
+    background: #494949;
+}
+.header-main__logo {
+  background-image: url("../img/brand_small.svg");
+  width: 115px;
+  font-size: 0;
+  height: 40px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  float: left;
+}
+@media only screen and (min-width: 64.063em) {
+  /* line 42, ../scss/qisat/structure/_header.scss */
+  .header-main__logo {
+    background-image: url("../img/brand_large.svg");
+    width: 415px;
+  }
+}
+
+.header-main__brand {
+    float: left;
+    padding: 10px;
+}
+
+.navbar-collapse{
+    padding: 0;
+}
+
+
+.top-bar-section .current-item a:not(.button){
+    background: #E7E7E7 !important;
+}
+
+.current-item {
+    margin-top:-4px;
+    border-top:4px solid #28B67C;
+}
+
+body, html {
+    height: 100%;
+}
+
+fieldset, table{
+    background: #fff;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37) !important;
+}
+
+fieldset legend, h3{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+    color: #494949;
+}
+
+fieldset legend{
+    font-size: 20px;
+}
+
+#menu-accordion-left{
+    height: calc(100vh - 60px);
+    float: left;
+    overflow: scroll;
+}
+#menu-accordion-left{
+    width: 100%;
+}
+#menu-accordion .ui-accordion-header{
+    margin: 0px !important;
+}
+.accordion-link a, .accordion-link span{
+    color: rgba(255,255,255,0.6) !important;
+}
+.accordion-link a:hover{
+    color: #FFF !important;
+}
+.accordion-link{
+    background: #494949;
+}
+.accordion-link:hover, .accordion-link h3:hover{
+    background: #3D3D3D;
+}
+.accordion-link h3{
+    font-size: 100%;
+    font-weight: normal;
+    padding: 10px 30px;
+    background: #494949;
+    border-width: 0px;
+    margin-top: 24px;
+}
+
+.accordion-link span{
+    left: .5em;
+    margin-right: 10px;
+    margin-left: -30px;
+}
+
+
+.row { max-width: 75rem; }
+ .content-main,
+ .footer-main {  width: 100%; display: block; float: left;}
+
+main{  min-height: 100vh;  margin-top: 60px; 
+        @media only screen and (max-width: 64.063em) { 
+             min-height: 400px;
+        }
+}
+
+/*Footer main*/
+/* line 2, ../scss/qisat/structure/_footer.scss */
+.footer-primary {
+  background-color: #4e4e4e;
+  padding: 50px 0;
+}
+
+/* line 3, ../scss/qisat/structure/_footer.scss */
+.footer-primary__columns {
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* line 4, ../scss/qisat/structure/_footer.scss */
+.footer-primary__columns--item {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  padding-right: 10px;
+}
+
+/* line 11, ../scss/qisat/structure/_footer.scss */
+.footer-primary__list__item--brand-qisat {
+  margin-top: 30px;
+}
+
+/* line 12, ../scss/qisat/structure/_footer.scss */
+.footer-primary__title {
+  font-size: 18px;
+  color: #fff;
+  margin: 20px 0 10px 0;
+}
+/* line 12, ../scss/qisat/structure/_footer.scss */
+.footer-primary__title a {
+  color: #fff;
+}
+
+/* line 13, ../scss/qisat/structure/_footer.scss */
+.footer-primary__ul {
+  list-style: none;
+}
+
+/* line 14, ../scss/qisat/structure/_footer.scss */
+.footer-primary__list {
+  padding-bottom: 10px;
+  list-style: none;
+  margin-left: 0;
+}
+
+/* line 15, ../scss/qisat/structure/_footer.scss */
+.footer-primary__list__item {
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* line 16, ../scss/qisat/structure/_footer.scss */
+.footer-primary__list__item--link {
+  transition: all 0.5s ease;
+  color: #979797;
+  font-size: 13px;
+}
+/* line 19, ../scss/qisat/structure/_footer.scss */
+.footer-primary__list__item--link:hover {
+  color: #ffffff;
+}
+
+/*Footer bottom*/
+/* line 24, ../scss/qisat/structure/_footer.scss */
+.footer-secundary__columns {
+  margin: 0;
+  text-align: center;
+}
+
+/* line 25, ../scss/qisat/structure/_footer.scss */
+.footer-secondary {
+  padding: 10px 0;
+  background-color: #424141;
+}
+
+/* line 33, ../scss/qisat/structure/_footer.scss */
+.footer-secondary__list {
+  list-style: none;
+  margin: 0;
+}
+
+/* line 37, ../scss/qisat/structure/_footer.scss */
+.footer-secundary__columns > li {
+  padding: 10px 0;
+}
+
+/* line 40, ../scss/qisat/structure/_footer.scss */
+.footer-secondary__list__item,
+.footer-secondary__list__item--link {
+  font-size: 13px;
+  color: #979797;
+  opacity: 0.8;
+  transition: all 0.5s ease;
+}
+
+/* line 43, ../scss/qisat/structure/_footer.scss */
+.footer-secondary__list__item:hover,
+.footer-secondary__list__item--link:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+/* line 47, ../scss/qisat/structure/_footer.scss */
+.footer-secondary__list__item {
+  margin: 0;
+  padding: 0 5px;
+  display: inline-block;
+}
+
+/* line 50, ../scss/qisat/structure/_footer.scss */
+.footer-secondary__list__item--brand-text {
+  padding-top: 0;
+  display: inline-block;
+  padding-right: 6px;
+}
+
+/* line 55, ../scss/qisat/structure/_footer.scss */
+.footer-secondary__list__item--brand {
+  display: inline-block;
+  width: 80px;
+  float: right;
+  margin-top: -6px;
+}
+
+
+.ms-parent{
+    width: 100% !important;
+  }
+
+.multiple {
+  min-width: 450px;
+}
+
+  
+  .tableResponsiveUserList th:nth-of-type(1) {
+    width:8%
+   }
+
+  .tableResponsiveUserList th:nth-of-type(2) {
+    width:8%
+   }
+
+  .tableResponsiveUserList th:nth-of-type(3) {
+    width:13%
+   }
+
+  .tableResponsiveUserList th:nth-of-type(4) {
+    width:30%
+   }
+
+  .tableResponsiveUserList th:nth-of-type(5) {
+    width:20%
+   }   
+
+  .tableResponsiveUserList th:nth-of-type(6) {
+    width:10%
+   } 
+
+  .tableResponsiveUserListAltoQi th:nth-of-type(1) {
+    width:8%
+   }
+
+  .tableResponsiveUserListAltoQi th:nth-of-type(2) {
+    width:15%
+   } 
+  .tableResponsiveUserListAltoQi th:nth-of-type(3) {
+    width:35%
+   } 
+  .tableResponsiveUserListAltoQi th:nth-of-type(4) {
+    width:25%
+   } 
+  .tableResponsiveUserListAltoQi th:nth-of-type(5) {
+    width:5%
+   } 
+
+  .tableResponsiveUserListCourses th:nth-of-type(1) {
+    width:55%
+  }
+
+
+.tableResponsiveCarrinho tr td:not(:first-of-type), .tableResponsiveCarrinho th:not(:first-of-type) {
+  text-align:center
+}
+
+  .tableResponsiveCarrinho th:nth-of-type(1) {
+    width:41%
+  }
+
+  .tableResponsiveUserProdutosList th:nth-of-type(2), .tableResponsiveUserProdutosList th:nth-of-type(4) {
+    width:40%
+  }
+
+  .tableResponsiveCarrinho th:nth-of-type(2) {
+    width:20%
+  }
+
+  .tableResponsiveCarrinho th:nth-of-type(4) {
+    width:16%
+  }
+
+  .tableResponsiveCarrinho th:nth-of-type(5) {
+    width:13%
+  }
+
+  .tableResponsiveCarrinho tr td:nth-of-type(4) * {
+    display: inline;
+  }
+
+
+  .tableResponsiveUserListCalls th:nth-of-type(1) {
+    width:8%
+   }
+
+  .tableResponsiveUserListCalls th:nth-of-type(2) {
+    width:15%
+   }
+
+  .tableResponsiveUserListCalls th:nth-of-type(3) {
+    width:70%
+   }
+
+  .tableResponsiveUserListCalls th:nth-of-type(4) {
+    width:5%
+   }
+
+
+
+  .tableResponsiveCompraAltoQi th:nth-of-type(1) {
+    width:30%
+   }
+
+  .tableResponsiveCompraAltoQi th:nth-of-type(2) {
+    width:60%
+   }
+
+  .tableResponsiveCompraAltoQi th:nth-of-type(3) {
+    width:20%
+   }
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* line 356, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserList {
+    /* Force table to not be like tables anymore */
+    display: block;
+    /* Hide table headers (but not display: none;, for accessibility) */
+  }
+  /* line 361, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserList thead, .tableResponsiveUserList tbody, .tableResponsiveUserList th, .tableResponsiveUserList td, .tableResponsiveUserList tr {
+    display: block;
+  }
+
+  /* line 366, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserList thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  /* line 372, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserList tr {
+    border: 1px solid #ccc;
+  }
+  /* line 374, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserList td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 25%;
+  }
+  /* line 382, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserList td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    left: 6px;
+    width: 100%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .tableResponsiveCarrinho td:before {
+    width: 10%;
+  }
+
+  /* line 400, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserList tr td:nth-of-type(1):before {
+    content: "ID";
+  }
+
+  /* line 400, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserList tr td:nth-of-type(2):before {
+    content: "Chave";
+  }
+  /* line 401, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserList tr td:nth-of-type(3):before {
+    content: "CPF";
+  }
+  /* line 401, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserList tr td:nth-of-type(4):before {
+    content: "Nome";
+  }
+  /* line 402, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserList tr td:nth-of-type(5):before {
+    content: "Email";
+  }
+  .tableResponsiveUserList tr td:nth-of-type(6):before {
+    content: " ";
+  }
+
+  .tableResponsiveUserCompra tr:not(:nth-last-of-type(2)) td:nth-of-type(4):before {
+    content: "Login:";
+  }
+  .tableResponsiveProdutoList tr:not(:nth-last-of-type(2)) td:nth-of-type(1):before {
+    content: "Sigla:";
+  }
+
+  .tableResponsiveProdutoList tr:not(:nth-last-of-type(2)) td:nth-of-type(3):before {
+    content: "Preço:";
+  }
+
+  .tableResponsiveProdutoList tr:not(:nth-last-of-type(2)) td:nth-of-type(4):before {
+    content: "Tipos:";
+  }
+
+.tableResponsiveCarrinho tr:not(:nth-last-of-type(2)) td:nth-of-type(1):before {
+    content: "Nome:";
+  }
+
+  .tableResponsiveCarrinho tr:not(:nth-last-of-type(2)) td:nth-of-type(2):before {
+    content: "Qtd.:";
+  }
+  .tableResponsiveCarrinho tr:not(:nth-last-of-type(2)) td:nth-of-type(3):before {
+    content: "Remover";
+  }
+  .tableResponsiveCarrinho tr:not(:nth-last-of-type(2)) td:nth-of-type(4):before {
+    content: "Valor:";
+  }
+
+  .tableResponsiveCarrinho tr:not(:nth-last-of-type(2)) td:nth-of-type(5):before {
+    content: "TOTAL";
+  }
+
+  .tableResponsiveCarrinhoList tr:not(:nth-last-of-type(2)) td:nth-of-type(1):before {
+    content: "Data";
+  }
+
+  .tableResponsiveCarrinhoList tr:not(:nth-last-of-type(2)) td:nth-of-type(2):before {
+    content: "Nome";
+  }
+  .tableResponsiveCarrinhoList tr:not(:nth-last-of-type(2)) td:nth-of-type(3):before {
+    content: "Valor";
+  }
+  .tableResponsiveCarrinhoList tr:not(:nth-last-of-type(2)) td:nth-of-type(4):before {
+    content: "Status";
+  }
+
+  .tableResponsiveCarrinhoList tr:not(:nth-last-of-type(2)) td:nth-of-type(5):before {
+    content: "Produto";
+  }
+
+  .tableResponsiveCarrinho2 tr:not(:nth-last-of-type(2)) td:nth-of-type(2):before {
+    content: "Qtd:";
+  }
+  .tableResponsiveCarrinho2 tr:not(:nth-last-of-type(2)) td:nth-of-type(3):before {
+    content: "Valor";
+  }
+  .tableResponsiveCarrinho2 tr:not(:nth-last-of-type(2)) td:nth-of-type(4):before {
+    content: "TOTAL";
+  }
+
+.tableResponsiveCupom tr:not(:nth-last-of-type(2)) td:nth-of-type(1):before {
+    content: "";
+  }
+
+  .tableResponsiveCupom tr:not(:nth-last-of-type(2)) td:nth-of-type(2):before {
+    content: "";
+  }
+  .tableResponsiveCupom tr:not(:nth-last-of-type(2)) td:nth-of-type(3):before {
+    content: "";
+  }
+
+  .tableResponsiveUserListCourses tr:not(:nth-last-of-type(2)) td:nth-of-type(1):before {
+    content: "Curso";
+  }
+
+  .tableResponsiveUserListCourses tr:not(:nth-last-of-type(2)) td:nth-of-type(2):before {
+    content: "Início";
+  }
+  .tableResponsiveUserListCourses tr:not(:nth-last-of-type(2)) td:nth-of-type(3):before {
+    content: "Fim";
+  }
+  .tableResponsiveUserListCourses tr:not(:nth-last-of-type(2)) td:nth-of-type(4):before {
+    content: "Status";
+  }
+
+
+  .tableResponsiveUserProdutosList tr:not(:nth-last-of-type(2)) td:nth-of-type(1):before {
+    content: "Pedido";
+  }
+
+  .tableResponsiveUserProdutosList tr:not(:nth-last-of-type(2)) td:nth-of-type(2):before {
+    content: "Produto";
+  }
+  .tableResponsiveUserProdutosList tr:not(:nth-last-of-type(2)) td:nth-of-type(3):before {
+    content: "Area";
+  }
+  .tableResponsiveUserProdutosList tr:not(:nth-last-of-type(2)) td:nth-of-type(4):before {
+    content: "Modulos";
+  }
+
+  /* line 400, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveCompraAltoQi tr:not(:nth-last-of-type(2)) td:nth-of-type(1):before {
+    content: "Código";
+  }
+
+  /* line 400, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveCompraAltoQi tr:not(:nth-last-of-type(2)) td:nth-of-type(2):before {
+    content: "Des.";
+  }
+  /* line 401, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveCompraAltoQi tr:not(:nth-last-of-type(2)) td:nth-of-type(3):before {
+    content: "Valor";
+  }
+
+  /* line 400, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserListAltoQi tr td:nth-of-type(1):before {
+    content: "Chave";
+  }
+
+  /* line 400, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserListAltoQi tr td:nth-of-type(2):before {
+    content: "CPF";
+  }
+  /* line 401, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserListAltoQi tr td:nth-of-type(3):before {
+    content: "Nome";
+  }
+  /* line 401, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserListAltoQi tr td:nth-of-type(4):before {
+    content: "Email";
+  }
+  /* line 401, ../scss/qisat/layout/_carrinho.scss */
+  .tableResponsiveUserListAltoQi tr td:nth-of-type(5):before {
+    content: "Ação";
+    line-height: 10px;
+  }
+
+
+
+  .ms-parent{
+      max-width: 200px;
+    }
+
+  .multiple {
+    min-width: 200px;
+  }
+}
+
+#checkbox-produtos .checkbox{
+  display: inline;
+  padding-right: 20px;
+}
+
+/* ############ cake_override */
+@media (min-width: 900px) {
+  .navbar-collapse.collapse {
+      display: block!important;
+      height: auto!important;
+      padding-bottom: 0;
+      overflow: visible!important;
+  }
+  .navbar-toggle {
+      display: none;
+  }
+}
+@media (max-width: 899px) {
+  .navbar-toggle {
+      float: right;
+      display: block !important;
+  }
+  .navbar-header {
+      float: none;
+  }
+  .navbar-collapse.collapse {
+      display: none !important;
+  }
+  .navbar-collapse.collapse.in {
+      display: block !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  #menu-accordion-left {
+    height: auto;
+  }
+  #actions-sidebar {
+    margin-bottom: -99999px;
+    padding-bottom: 0;
+  }
+}

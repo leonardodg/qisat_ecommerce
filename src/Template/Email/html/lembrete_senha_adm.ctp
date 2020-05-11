@@ -1,0 +1,1 @@
+O usuário <b><?= $nomeChave?></b>, recebeu lembrete de senha para acessar sua conta em QiSat - O Canal de e-Learning da Engenharia.

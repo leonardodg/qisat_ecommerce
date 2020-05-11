@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: E-commerce\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 2.0.4\n"
+
+msgid "Actions"
+msgstr "Ações"
+
+msgid "Delete"
+msgstr "Deletar"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "View"
+msgstr "Visualizar"
+
+msgid "previous"
+msgstr "Anterior"
+
+msgid "next"
+msgstr "Próximo"
+
+msgid "of"
+msgstr "de"
+
+msgid "Are you sure you want to delete # {0}?"
+msgstr "Tem certeza de que deseja excluir # {0}?"
+
+msgid "Submit"
+msgstr "Salvar"
+
+msgid "You are not authorized to access that location."
+msgstr "Você não tem permissão para acessar esse local"
+
+msgid "The provided value is invalid"
+msgstr "Esse valor é inválido"
+
+msgid "This field cannot be left empty"
+msgstr "Esse campo deve ser informado"
+
+msgid "Monday"
+msgstr "Segunda-feira"
+
+msgid "Tuesday"
+msgstr "Terça-feira"
+
+msgid "Wednesday"
+msgstr "Quarta-feira"
+
+msgid "Thursday"
+msgstr "Quinta-feira"
+
+msgid "Friday"
+msgstr "Sexta-feira"
+
+msgid "Saturday"
+msgstr "Sábado"
+
+msgid "Sunday"
+msgstr "Domingo"
+
+msgid "Jan"
+msgstr "Jan"
+
+msgid "Feb"
+msgstr "Fev"
+
+msgid "Mar"
+msgstr "Mar"
+
+msgid "Apr"
+msgstr "Abr"
+
+msgid "May"
+msgstr "Maio"
+
+msgid "June"
+msgstr "Jun"
+
+msgid "July"
+msgstr "Jul"
+
+msgid "Aug"
+msgstr "Ago"
+
+msgid "Sept"
+msgstr "Set"
+
+msgid "Oct"
+msgstr "Out"
+
+msgid "Nov"
+msgstr "Nov"
+
+msgid "Dec"
+msgstr "Dez"
+
+msgid "Configuracao"
+msgstr "Configuração"
+
+msgid "Convenio"
+msgstr "Convênio"
+
+msgid "CursoPresencial"
+msgstr "Curso Presencial"
+
+msgid "FormaPagamento"
+msgstr "Formas de Pagamento"
+
+msgid "Indicacao"
+msgstr "Indicação"
+
+msgid "Promocao"
+msgstr "Promoção"
+
+msgid "DuvidasFrequentes"
+msgstr "Dúvidas Frequentes"

@@ -1,0 +1,355 @@
+<?php
+    $this->layout = false;
+    require_once (ROOT . DS . 'vendor' . DS . 'fpdf181' . DS . 'fpdf.php');
+
+    $isEntidade = (strtolower ( $convenio->ecm_convenio_tipo_instituicao->descricao) == 'entidade de classe');
+    $tipoInstituicao = utf8_decode ( $convenio->ecm_convenio_tipo_instituicao->descricao);
+
+    $marginEsquerda = 50;
+    $marginTopo = 100;
+    $marginCentro = 180;
+
+    $pdf = new FPDF ( "P", "pt", "A4" );
+    $pdf->AddPage ();
+    $pdf->Image ( \Cake\Routing\Router::url('/img/contrato/', true) . 'topo-contrato.jpg', 25, 10, 550, 67 );
+    $pdf->Image ( \Cake\Routing\Router::url('/img/contrato/', true) . 'rodape-contrato.jpg', 25, 800, 550, 29 );
+
+    $dia = date ( 'd', time () );
+
+    setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+    date_default_timezone_set('America/Sao_Paulo');
+    $mes = strftime('%B', strtotime('today'));
+
+    $ano = date ( 'Y', time () );
+
+    $pdf->SetTitle ('Termo de Adesão Projeto QiSat Rede Educacional On Line');
+
+    $pdf->SetFont ( 'Arial', '', 10 );
+
+    $pdf->SetXY ( $marginEsquerda, $marginTopo );
+    $pdf->Cell ( 5, 5, 'Florianópolis, ' . $dia . ' de ' . $mes . ' de ' . $ano );
+
+    $marginTopo += 20;
+    $pdf->SetXY ( $marginEsquerda, $marginTopo );
+    $pdf->Cell ( 5, 5, 'Á ' . utf8_decode ( $convenio->nome_instituicao) );
+
+    /*$marginTopo += 20;
+    $pdf->SetXY ( $marginEsquerda, $marginTopo );
+    $pdf->Cell ( 5, 5, utf8_decode ( $convenio->mdl_cidade->nome . ' - ' . $convenio->mdl_cidade->mdl_estado->uf) );*/
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 30;
+    $pdf->SetXY ( $marginCentro, $marginTopo );
+    $pdf->Cell ( 5, 5, 'Termo de Adesão Projeto QiSat Rede Educacional On Line' );
+
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $marginTopo += 30;
+    $pdf->SetXY ( $marginEsquerda, $marginTopo );
+    $pdf->Cell ( 5, 5, 'Prezado(a) ' . utf8_decode ( $convenio->nome_responsavel) . ',' );
+
+    $marginTopo += 30;
+    $pdf->SetXY ( $marginEsquerda, $marginTopo );
+    $pdf->SetLeftMargin ( 65 );
+    $pdf->Cell ( 5, 5, 'O Projeto QiSat Rede Educacional On Line visa o intercâmbio de conhecimento entre a ' . $tipoInstituicao );
+    $pdf->SetXY ( $marginEsquerda, $marginTopo + 8 );
+    $pdf->MultiCell ( 498, 12, 'e o QiSat - Canal de E-learning da Engenharia, portal www.qisat.com.br, direcionado às áreas da Engenharia Civil, Elétrica, Sanitária e Arquitetura levando descontos especiais para os associados da entidade conveniada nas inscrições de cursos de aperfeiçoamento técnico do canal QiSat.' );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 80;
+    $pdf->SetXY ( $marginEsquerda, $marginTopo );
+    $pdf->Cell ( 20, 5, '1)' );
+    $pdf->Cell ( 5, 5, 'Benefícios propostos no período de vigência do Termo de Adesão' );
+
+    if ($isEntidade) {
+
+        $pdf->SetFont ( 'Arial', 'B', 10 );
+        $marginTopo += 30;
+        $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+        $pdf->Cell ( 20, 5, 'A.' );
+        $pdf->Cell ( 100, 5, 'Desconto Associado ' );
+
+        $pdf->SetFont ( 'Arial', '', 10 );
+        $pdf->Cell ( 20, 5, ' - Desconto de 20% no valor normal da inscrição de curso QiSat,  ' );
+        $marginTopo += 10;
+        $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+        $pdf->MultiCell ( 430, 15, 'com parcelamento mínimo de R$ 100,00 via cartão de crédito, ao associado que comprovar no ato da compra, vínculo profissional na ' . $tipoInstituicao . ' conveniada. Desconto não acumulativo, válido somente para compra através da Central de Inscrições pelo telefone (48) 3332-5000, email: qisat@qisat.com.br.' );
+
+        $pdf->SetFont ( 'Arial', 'B', 10 );
+        $marginTopo += 70;
+        $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+        $pdf->Cell ( 20, 5, 'B.' );
+        $pdf->Cell ( 70, 5, 'Apoio Didático  ' );
+        $pdf->SetFont ( 'Arial', '', 10 );
+        $pdf->MultiCell ( 430, 5, ' - Uma inscrição QiSat, sem ônus, em curso a distância dos softwares' );
+
+        $marginTopo += 10;
+        $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+        $pdf->MultiCell ( 430, 15, 'AltoQi para a entidade que adquirir software Eberick, Hydros, Lumine, QiCAD, Hydros Incêndio e/ou Lumine Cabeamento na vigência do Termo de Adesão ao Projeto QiSat Rede Educacional On Line.' );
+    } else {
+
+        $pdf->SetFont ( 'Arial', 'B', 10 );
+        $marginTopo += 30;
+        $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+        $pdf->Cell ( 20, 5, 'A.' );
+        $pdf->Cell ( 100, 5, 'Desconto Professor' );
+
+        $pdf->SetFont ( 'Arial', '', 10 );
+        $pdf->Cell ( 20, 5, ' - Desconto de 50% no valor normal da inscrição de curso QiSat, com ' );
+        $marginTopo += 10;
+        $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+        $pdf->MultiCell ( 430, 15, 'parcelamento mínimo de R$ 100,00 via cartão de crédito, ao professor que comprovar no ato da compra, vínculo profissional na Instituição de Ensino conveniada. Desconto não acumulativo, válido somente para compra através da Central de Inscrições pelo telefone (48) 3332-5000, email: qisat@qisat.com.br.' );
+
+        $pdf->SetFont ( 'Arial', 'B', 10 );
+        $marginTopo += 70;
+        $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+        $pdf->Cell ( 20, 5, 'B.' );
+        $pdf->Cell ( 100, 5, 'Desconto Estudante' );
+        $pdf->SetFont ( 'Arial', '', 10 );
+        $pdf->MultiCell ( 430, 5, ' - Desconto de 30% no valor normal da inscrição de curso QiSat, com' );
+
+        $marginTopo += 10;
+        $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+        $pdf->MultiCell ( 430, 15, 'parcelamento mínimo de R$ 100,00 via cartão de crédito, ao estudante que comprovar no ato da compra, matrícula em cursos da Instituição de Ensino conveniada. Desconto não acumulativo, válido somente para compra através da Central de Inscrições pelo telefone (48) 3332-5000, email: qisat@qisat.com.br.' );
+
+        $pdf->SetFont ( 'Arial', 'B', 10 );
+        $marginTopo += 70;
+        $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+        $pdf->Cell ( 20, 5, 'C.' );
+        $pdf->Cell ( 80, 5, 'Apoio Didático' );
+        $pdf->SetFont ( 'Arial', '', 10 );
+        $pdf->MultiCell ( 430, 5, ' - Uma inscrição QiSat, sem ônus, em curso a distância dos softwares AltoQi' );
+
+        $marginTopo += 10;
+        $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+        $pdf->MultiCell ( 430, 15, 'para a instituição que adquirir software Eberick, Hydros, Lumine, QiCAD, Hydros Incêndio e/ou Lumine Cabeamento na vigência do Termo de Adescartão ao Projeto QiSat Rede Educacional On Line.' );
+    }
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 60;
+    $pdf->SetXY ( $marginEsquerda, $marginTopo );
+    $pdf->Cell ( 20, 5, '2)' );
+    $pdf->Cell ( 5, 5, 'Atribuições' );
+
+    $marginTopo += 20;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->SetFont ( 'Arial', '', 10 );
+
+    $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+    $pdf->Cell ( 20, 5, 'Para que a aliança se concretize a empresa estabelece as seguintes ações:' );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 30;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->Cell ( 20, 5, 'A.' );
+
+    $pdf->Cell ( 70, 5, 'Da ' . $tipoInstituicao );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 25;
+    $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+    $pdf->Cell ( 20, 5, 'I.' );
+
+    $pdf->SetXY ( ($marginEsquerda + 60), ($marginTopo - 5) );
+    $pdf->SetFont ( 'Arial', '', 10 );
+
+    $pdf->MultiCell ( 380, 15, 'Efetuar no site QiSat o cadastro da ' . $tipoInstituicao . '.' );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 15;
+    $pdf->SetXY ( ($marginEsquerda + 37), $marginTopo );
+    $pdf->Cell ( 20, 5, 'II.' );
+
+    $pdf->SetXY ( ($marginEsquerda + 60), ($marginTopo - 5) );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->MultiCell ( 410, 15, 'Enviar para o email qisat@qisat.com.br o Termo de Adesão devidamente assinado apresentando formalmente o nome e cargo da pessoa responsável pelo convênio e pela implementação das ações junto à ' . $tipoInstituicao . ' e o formulário ANEXO I.' );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 45;
+    $pdf->SetXY ( ($marginEsquerda + 34), $marginTopo );
+    $pdf->Cell ( 20, 5, 'III.' );
+
+    $pdf->SetXY ( ($marginEsquerda + 60), ($marginTopo - 5) );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->MultiCell ( 410, 15, 'Para justificar e viabilizar o convênio o ANEXO I deverá conter a listas dos associados adimplentes da ' . $tipoInstituicao . '.' );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 30;
+    $pdf->SetXY ( ($marginEsquerda + 33), $marginTopo );
+    $pdf->Cell ( 20, 5, 'IV.' );
+
+    $pdf->SetXY ( ($marginEsquerda + 60), ($marginTopo - 5) );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->MultiCell ( 410, 15, 'Zelar pela aquisição dos direitos da ' . $tipoInstituicao . ' relativo aos benefícios aprovados, mediante comunicação eficiente e formal junto à Empresa, através da pessoa responsável pelo Projeto.' );
+
+    if (! $isEntidade) {
+        $pdf->AddPage ();
+        $marginTopo = 70;
+    }
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 45;
+    $pdf->SetXY ( ($marginEsquerda + 36), $marginTopo );
+    $pdf->Cell ( 20, 5, 'V.' );
+
+    $pdf->SetXY ( ($marginEsquerda + 60), ($marginTopo - 5) );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->MultiCell ( 410, 15, 'Utilizar os Cursos QiSat como material didático de apoio junto a ' . $tipoInstituicao . ' conveniada.' );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 30;
+    $pdf->SetXY ( ($marginEsquerda + 33), $marginTopo );
+    $pdf->Cell ( 20, 5, 'VI.' );
+
+    $pdf->SetXY ( ($marginEsquerda + 60), ($marginTopo - 5) );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->MultiCell ( 410, 15, 'Realizar a difusão do convênio nos canais de comunicação da ' . $tipoInstituicao . ', destacando os descontos previstos no Termo de Adesão ao projeto.' );
+
+    /* Segunda Pagina */
+    if ($isEntidade) {
+        $pdf->AddPage ();
+        $marginTopo = 70;
+    }
+    $pdf->Image ( \Cake\Routing\Router::url('/img/contrato/', true) . 'topo-contrato.jpg', 25, 10, 550, 67 );
+    $pdf->Image ( \Cake\Routing\Router::url('/img/contrato/', true) . 'rodape-contrato.jpg', 25, 800, 550, 29 );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 40;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->Cell ( 20, 5, 'B.' );
+    $pdf->Cell ( 70, 5, 'Do QiSat' );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 25;
+    $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+    $pdf->Cell ( 20, 5, 'I.' );
+
+    $pdf->SetXY ( ($marginEsquerda + 60), ($marginTopo - 5) );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->MultiCell ( 410, 15, 'Conceder os benefícios previstos no Termo de Adesão via Central de Inscrições pelo telefone (48) 3332-5000, email: qisat@qisat.com.br, após o recebimento do ANEXO I e do TERMO DE ADESÃO assinado pelo responsável perante a ' . $tipoInstituicao . '.' );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 45;
+    $pdf->SetXY ( ($marginEsquerda + 37), ($marginTopo + 15) );
+    $pdf->Cell ( 20, 5, 'II.' );
+
+    $pdf->SetXY ( ($marginEsquerda + 60), ($marginTopo + 10) );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->MultiCell ( 410, 15, 'Manter o Projeto QiSat Rede Educacional On Line disponível no www.qisat.com.br identificando as ' . $tipoInstituicao . ' conveniadas.' );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 60;
+    $pdf->SetXY ( $marginEsquerda, $marginTopo );
+    $pdf->Cell ( 20, 5, '3)' );
+    $pdf->Cell ( 5, 5, 'Prazo do Convênio' );
+
+    $pdf->SetXY ( ($marginEsquerda + 40), ($marginTopo + 10) );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->MultiCell ( 430, 15, 'Perãodo de vinte e quatro meses (dois anos) a partir da data da assinatura do Termo de Adesão.' );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 60;
+    $pdf->SetXY ( $marginEsquerda, $marginTopo );
+    $pdf->Cell ( 20, 5, '4)' );
+    $pdf->Cell ( 5, 5, 'Disposições Gerais' );
+
+    $pdf->SetXY ( ($marginEsquerda + 40), ($marginTopo + 10) );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->MultiCell ( 430, 15, 'Qualquer informação e orientação pertinente ao processo apresentado poderão ser obtidas sempre através do e-mail qisat@qisat.com.br e pelo telefone (48) 3332-5000.' );
+
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $marginTopo += 60;
+    $pdf->SetXY ( $marginEsquerda, $marginTopo );
+    $pdf->Cell ( 20, 5, '5)' );
+    $pdf->Cell ( 5, 5, 'Adesão' );
+
+    $marginTopo += 15;
+    $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->Cell ( 20, 5, 'Nome do Responsável: ' . utf8_decode ( $convenio->nome_responsavel) );
+
+    $marginTopo += 13;
+    $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+    $pdf->Cell ( 5, 5, 'Cargo Ocupado: ' . utf8_decode ( $convenio->cargo) );
+
+    $marginTopo += 13;
+    $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+    $pdf->Cell ( 5, 5, 'E-mail: ' . $convenio->email);
+
+    $marginTopo += 13;
+    $pdf->SetXY ( ($marginEsquerda + 40), $marginTopo );
+    $pdf->Cell ( 5, 5, 'Telefone: ' . $convenio->telefone);
+
+    $marginTopo += 20;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->MultiCell ( 450, 15, 'O QiSat agradece a especial atenção e externa desde já agradecimentos e cumprimentos pelo Convênio estabelecido.' );
+
+    $marginTopo += 60;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $pdf->Cell ( 5, 5, 'Atenciosamente,' );
+
+    $marginTopo += 30;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->Cell ( 5, 5, 'Stella Maris Maciel Sebastião' );
+
+    $marginTopo += 12;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->Cell ( 5, 5, 'Diretoria' );
+
+    $marginTopo += 12;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->Cell ( 5, 5, 'E-mail: stella@qisat.com.br' );
+
+    $marginTopo += 12;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->Cell ( 5, 5, 'Telefone: (48) 3332-5000 ramal: 5050 ' );
+
+    $marginTopo += 12;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->Cell ( 5, 5, 'Website: www.qisat.com.br' );
+
+    $marginTopo += 40;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $pdf->Cell ( 5, 5, 'De acordo com o Termo de Adesão do Projeto QiSat Rede Educacional em  ____/____/_______.' );
+
+    $marginTopo += 40;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->SetFont ( 'Arial', 'B', 10 );
+    $pdf->Cell ( 5, 5, 'Responsável pelo Convênio:' );
+
+    $pdf->SetLeftMargin ( $marginEsquerda + 250 );
+
+    if ($isEntidade) {
+        $pdf->Cell ( 5, 5, 'Presidente da Entidade:' );
+    } else {
+        $pdf->Cell ( 5, 5, 'Coordenador da Instituição:' );
+    }
+
+    $marginTopo += 30;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->Cell ( 5, 5, '_____________________________________' );
+
+    $pdf->SetLeftMargin ( $marginEsquerda + 250 );
+    $pdf->Cell ( 5, 5, '_____________________________________' );
+
+    $marginTopo += 12;
+    $pdf->SetXY ( ($marginEsquerda + 20), $marginTopo );
+    $pdf->SetFont ( 'Arial', '', 10 );
+    $pdf->Cell ( 5, 5, utf8_decode ( $convenio->nome_responsavel) );
+
+    $pdf->SetLeftMargin ( $marginEsquerda + 250 );
+    $pdf->Cell ( 5, 5, utf8_decode ( $convenio->nome_coordenador) );
+
+    /*
+     * $marginTopo += 40; $pdf->SetXY ( ($marginEsquerda+20), $marginTopo ); $pdf->SetFont ( 'Arial', 'B', 10 ); $pdf->Cell ( 5, 5,'Presidente da Entidade:'); $marginTopo += 30; $pdf->SetXY ( ($marginEsquerda+20), $marginTopo ); $pdf->SetFont ( 'Arial', '', 10 ); $pdf->Cell ( 5, 5,'_____________________________________'); $marginTopo += 10; $pdf->SetXY ( ($marginEsquerda+20), $marginTopo ); $pdf->SetFont ( 'Arial', '', 10 ); $pdf->Cell ( 5, 5,utf8_decode($convenio->getNomeCoordenador()));
+     */
+
+    $pdf->Output ();
+?>

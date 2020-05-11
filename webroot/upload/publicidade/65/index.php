@@ -1,0 +1,200 @@
+<?php 
+	include ('../../dadosConvite.php');/*Arquivo com os dados do curso. Não remover*/	
+	
+	##################### Vari�veis com os dados s####################
+	## $nomeCurso = Nome do curso									##
+	## $preco = Valor integral do curso							 	##
+	## $moeda = Moeda de refer�ncia								 	##
+	## $dataInicioPromocao = Data de in�cio da promo��o 			##
+ 	## $dataFimPromocao = Data do fim da promo��o					##
+ 	## $descontoValor = Valor do desconto em $						##
+ 	## $descontoPorcentagem = Valor do desconto em %                ##
+ 	## $desconto = Valor do desconto em $							##
+ 	## $precoPromocional = Pre�o promocional						##
+ 	## $nuMaxParcelas = Numero m�ximo de parcelas					##
+	##################################################################
+	 
+	//echo $nomeCurso . '<br>';
+	//echo $preco . '<br>';
+	//echo $moeda . '<br>';
+	//echo $dataInicioPromocao . '<br>';
+ 	//echo $dataFimPromocao . '<br>';
+ 	//echo $descontoValor . '<br>';
+ 	//echo $descontoPorcentagem . '<br>';
+ 	//echo $desconto . '<br>';
+ 	//echo $precoPromocional . '<br>';
+ 	//echo $nuMaxParcelas . '<br>';
+		
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pacote de cursos Projeto Elétrico Predial - Teoria via internet</title>
+<style type="text/css">
+<!--
+a:link {
+	color: #015da2;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #015da2;
+}
+a:hover {
+	text-decoration: underline;
+	color: #01487C;
+}
+a:active {
+	text-decoration: none;
+	color: #015da2;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<div align="center" style=" font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#333333; margin:auto; padding-bottom:3px; padding-top:3px;">Caso não esteja visualizando o e-mail abaixo, <a href="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/index.php?preview=1&produtoid=220&folder=65" target="_blank" style="color:#015DA2;">CLIQUE AQUI</a>.</div>
+
+<table width="780" border="0" align="center" cellpadding="0" cellspacing="0" style="font-family:Arial, Helvetica, sans-serif; border: 1px solid #dbdbdb; ">
+  <tr>
+    <td bgcolor="#FFFFFF"><a href="http://www.qisat.com.br/" target="_blank"><img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/qisat.png" border="0" title="QiSat | O Canald e E-learning da Engenharia"></a></td>
+  </tr>
+  <tr bgcolor="#eeeeee">
+    <td colspan="2" align="left" valign="bottom" bgcolor="#e8e8e8" border="0" ><a href="http://www.qisat.com.br/ecommerce/produtos/info.php?id=220" target="_blank"><img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/IMG_PCELE_T2.jpg" border="0" title="Pacote de cursos Projeto Elétrico Predial - Teoria via internet" /></a></td>
+  </tr>
+  <tr>
+    <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr  >
+        <td width="60"></td>
+        <td colspan="2" style="padding:10px 20px 10px 24px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#333333; font-style:italic">Carga horária total dos cursos pertencentes ao pacote: <span style="font-size:20px">68 horas</span><br/></td>
+        </tr>
+        <tr style="font-family:Arial, Helvetica, sans-serif; font-size:18px; font-weight:bold; color:#333333; text-transform:uppercase; padding-top:10px;">
+          <td rowspan="2" align="center" valign="top">&nbsp;</td>
+        <td colspan="2" style="padding:10px 4px 10px 24px;">Cursos Inclusos:</td>
+        </tr>
+      <tr style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; line-height:120%;">
+        <td colspan="2" align="left" valign="top" style="padding-left:24px; padding-right:23px; text-align:justify; color:#333333;">
+<img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/toque.png"/ style="padding-right:8px;">&nbsp;&nbsp;Curso Instalações Elétricas Residenciais via internet<br/>
+<img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/toque.png"/ style="padding-right:8px;">&nbsp;&nbsp;Curso Instalações Elétricas Prediais, Telefonia e Infraestrutura para TV via internet<br/>
+<img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/toque.png"/ style="padding-right:8px;">&nbsp;&nbsp;Curso Norma Regulamentadora 10<br/><br/><br/>
+<a href="http://www.qisat.com.br/ecommerce/produtos/info.php?id=220" target="_blank" style="color:#333333">[...] Saiba mais</a><br/><br/></td>
+        </tr>
+      <tr style="font-family:Arial, Helvetica, sans-serif; font-size:18px; font-weight:bold; color:#333333; padding-top:10px;">
+        <td style="padding:10px 4px 10px 24px;">&nbsp;</td>
+        <td colspan="2" style="padding:10px 4px 10px 24px;">Nos cursos e-Learning do QiSat você tem a seu dispor:</td>
+        </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td colspan="2" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; padding-left:24px; padding-right:40px; text-align:justify; line-height:120%;">
+        <img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/toque.png"/ style="padding-right:8px;">&nbsp;&nbsp;Acesso ao curso a qualquer momento e de qualquer lugar;<br/>
+  		<img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/toque.png"/ style="padding-right:8px;">&nbsp;&nbsp;<strong>Fórum de discussões:</strong> é um espaço para debates e troca de experiências com outros participantes, sobre vários<br/><span style="padding-left:28px">temas propostos pelo curso;</span><br/>
+  		<img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/toque.png"/ style="padding-right:8px;">&nbsp;&nbsp;<strong>Monitoria:</strong> O professor responde, por e-mail, às dúvidas sobre os conteúdos relacionados às aulas;<br/>
+  		<img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/toque.png"/ style="padding-right:8px;">&nbsp;&nbsp;<strong>Biblioteca:</strong> Material de apoio para impressão ou download, além de materiais complementares e recomendações<br/> <span style="padding-left:28px">de sites e livros;</span><br/>
+ 		<img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/toque.png"/ style="padding-right:8px;">&nbsp;&nbsp;<strong>Ajuda:</strong> espaço para esclarecimento de dúvidas em relação ao conteúdo, às questões administrativas e<br/><span style="padding-left:28px">tecnológicas;</span><br/>
+        <img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/toque.png"/ style="padding-right:8px;">&nbsp;&nbsp;<strong>Certificado:</strong> o aluno receberá ao final do curso um certificado de conclusão.<br/></td>
+        </tr>
+      <tr style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#333333; line-height:140%;">
+        <td></td>
+        <td height="100" align="center"><a href="http://www.qisat.com.br/ecommerce/produtos/info.php?id=220" target="_blank"><img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/bt_comprar.jpg" border="0"/ title="Comprar Pacote"></a></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><table width="100%" border="0" cellspacing="6" cellpadding="0" height="220">
+      <tr>
+        <td width="33%" valign="top" bgcolor="#e8e8e8"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr style="font-size:14px; text-transform:uppercase; color:#333333; font-family: Arial, Helvetica, sans-serif">
+    <td height="40" align="center">Formato</td>
+    </tr>
+  <tr>
+    <td height="100" align="center"><img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/formato.png" width="63" height="71" / title="Formato"></td>
+    </tr>
+  <tr style="font-size:12px; color:#333333; padding-left:10px; padding-right:8px; font-family:Arial, Helvetica, sans-serif">
+    <td align="left" style="font-size:12px; color:#333333; padding-left:10px; padding-right:8px;">Carga horária total: 68 horas<br/></td>
+    </tr>
+  <tr style="font-size:13px; color:#333333; padding-left:10px; padding-right:8px; font-family:Arial, Helvetica, sans-serif">
+    <td style="font-size:13px; color:#333333; padding-left:10px; padding-right:8px;">&nbsp;</td>
+  </tr>
+        </table></td>
+        <td width="33%" valign="top" bgcolor="#e8e8e8"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr style="font-size:14px; text-transform:uppercase; color:#333333; font-family: Arial, Helvetica, sans-serif">
+    <td height="40" align="center">Certificado</td>
+    </tr>
+  <tr>
+    <td height="100" align="center"><img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/certificado.png" width="68" height="91" / title="Certificado"></td>
+    </tr>
+  <tr style="font-size:12px; color:#333333; padding-left:10px; padding-right:8px; font-family:Arial, Helvetica, sans-serif">
+    <td align="left" style="font-size:12px; color:#333333; padding-left:10px; padding-right:8px;">Com 95% de aproveitamento você recebe o certificado do curso em até 30 dias após a data de conclusão.</td>
+    </tr>
+  <tr style="font-size:13px; color:#333333; padding-left:10px; padding-right:8px; font-family:Arial, Helvetica, sans-serif">
+    <td style="font-size:13px; color:#333333; padding-left:10px; padding-right:8px;">&nbsp;</td>
+  </tr>
+        </table></td>
+        <td width="33%" valign="top" bgcolor="#e8e8e8"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr style="font-size:14px; text-transform:uppercase; color:#333333; font-family: Arial, Helvetica, sans-serif">
+    <td height="40" align="center" >Investimento</td>
+    </tr>
+  <tr>
+    <td height="100" align="center"><img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/investimento.png" width="48" height="67" / title="Investimento"></td>
+    </tr>
+  <tr style="font-family:Arial, Helvetica, sans-serif">
+    <td height="40" align="center" style="font-size:16px; color:#333333;"><?php
+    		if($precoPromocional != $preco){
+    			echo 'de <span style="font-size:16px; text-decoration: line-through;">' . $moeda . ' ' . $preco . '</span><br>';
+    			echo 'por ' . $moeda . ' <span style="font-size:26px;"><strong>' . $precoPromocional . '</strong></span><br>';
+    			echo '<span style="font-size:12px;color:#999999;">at&eacute; '. $dataFimPromocao .'</span>';
+    		}else{
+    			echo $moeda . ' <span style="font-size:26px;"><strong>' . $preco . '</strong></span>';	
+    		}     	
+    	?></td>
+  </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="50" colspan="2" align="center" bgcolor="#3E3E3E" style="color:#FFF; font-size:14px; padding-right:10px;"><table width="600px" border="0" align="left" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="200">&nbsp;</td>
+          <td width="30"><img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/tique.png" width="18" height="20"/></td>
+          <td align="left"><a href="http://www.qisat.com.br/ecommerce/webstore.php" target="_blank" style="color:#FFFFFF;">Conheça o portfólio de cursos do <b> QiSat</b></a></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="4" colspan="2"></td>
+  </tr>
+  <tr>
+    <td height="50" colspan="2" align="center" bgcolor="#3E3E3E" style="color:#FFF; font-size:14px; padding-right:10px;"><table width="600px" border="0" align="left" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="200">&nbsp;</td>
+          <td width="30"><img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/tique.png" width="18" height="20"/></td>
+          <td align="left"><a href="http://www.qisat.com.br/ecommerce/produtos/category.php?id=10" target="_blank" style="color:#FFFFFF;">Conheça os cursos presenciais do <b> QiTec</b></a></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="50" colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#666;">
+  <tr style="color:#666666">
+    <td height="114" style="padding-left:24px; font-weight:bold; text-transform:uppercase;">Para mais informações:</td>
+    <td width="3%" align="center"><img src="http://public.qisat.com.br/campanhas/e-convites/cursos/presencial/cbqbg/images/linha.jpg" width="1" height="60" /></td>
+    <td width="4%" align="center"><img src="http://public.qisat.com.br/campanhas/e-convites/cursos/presencial/cbqbg/images/contato.png" width="14" height="52" /></td>
+    <td align="left" style="line-height:140%; color:#666666">(48) 3332-5000<br />
+    <span style="color:#666666">central@qisat.com.br</span><br />
+      <a href="http://www.qisat.com.br/" target="_blank" style="color:#666666">www.qisat.com.br</a></td>
+    <td width="25%" align="center"><a href="http://www.qisat.com.br" target="_blank"><img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/logoqisat.png" width="91" height="66" border="0" / title="QiSat | O canal de E-Learning da Engenharia"></a></td>
+    <td width="25%" align="center"><a href="http://www.altoqi.com.br/" target="_blank"><img src="http://www.qisat.com.br/ecommerce/produtos/convites/arquivos/65/images/logoaltoqi.png" width="119" height="38" border="0" / title="AltoQi Tecnologia Aplicada a Engenharia"></a></td>
+  </tr>
+</table></td>
+  </tr>
+</table>
+</div>
+<div  align="center" style="font-family:Tahoma;font-size:10px;color:#666666;text-decoration:none; margin:auto; padding-bottom:3px; padding-top:6px;">© 2003 - 2016 - Todos os Direitos Reservados à MN Tecnologia e Treinamento Ltda. | Para mais informações entre em <a href="mailto:central@qisat.com.br" target="_blank" style="color:#02416d;">contato</a>.</div>
+</body>
+</html>
