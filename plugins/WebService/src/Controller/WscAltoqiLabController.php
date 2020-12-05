@@ -479,12 +479,13 @@ class WscAltoqiLabController extends WscController
                                 $user_enrolments['status'] = "Curso com restrição de conclusão";
                             } else {
                                 $user_enrolments['view'] = 'http://' . $moodle . '/course/view.php?id=' . $user_enrolments['cursoid'];
-                                if (array_key_exists($user_enrolments['cursoid'], $mdlCourseModulesCompletion)) {
-                                    $count = $mdlCourseModulesCompletion[$user_enrolments['cursoid']];
-                                    $total = $mdlCourseModules[$user_enrolments['cursoid']];
-                                    $user_enrolments['andamento'] = ($count / $total) * 100;
-                                }
                             }
+                        }
+                        if (array_key_exists($user_enrolments['cursoid'], $mdlCourseModulesCompletion)) {
+                              $count = $mdlCourseModulesCompletion[$user_enrolments['cursoid']];
+                              $total = $mdlCourseModules[$user_enrolments['cursoid']];
+                              $user_enrolments['andamento'] = ($count / $total) * 100;
+
                         }
 
                         $this->loadModel('WebService.MdlCourseModules');
