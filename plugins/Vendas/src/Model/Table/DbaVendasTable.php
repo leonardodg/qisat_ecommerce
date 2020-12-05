@@ -140,7 +140,7 @@ class DbaVendasTable extends Table
     public function searchProductsApps(&$venda){
 
         $order = ['B', 'H', 'E', 'S', 'P', 'I', 'C'];
-        $linhas_qib = [ 'H' => [394,551,724], 'E' => [398,554,722], 'S' => [454,557,726], 'P' => [[396,552,725],[399,555,721]], 'I' =>[397,553,723], 'A' => [400,556,720], 'Q' => [393,401,585,586,587,588,606,629,689,727,741,742,796,797,798,799,800,801,827,826,817,816,815,814,813,812,811,808]]; 
+        $linhas_qib = [ 'H' => [394,551,724], 'E' => [398,554,722], 'S' => [454,557,726], 'P' => [[396,552,725],[399,555,721]], 'I' =>[397,553,723], 'A' => [400,556,720], 'Q' => [393,401,585,586,587,588,606,629,689,727,741,742,796,797,798,799,800,801,827,826,817,816,815,814,813,812,811,808, 877,878,879,880,881,882,883,884,885]]; 
 
         $condicoesApp = [];
         $protetores = [];
@@ -153,14 +153,16 @@ class DbaVendasTable extends Table
         if(isset($venda->dba_vendas_produtos)){
             array_walk( $venda->dba_vendas_produtos, function ($prod, $k) use(&$protetores, $venda){
                                 if(!array_key_exists($prod['numero_protetor'], $protetores))
-                                    $protetores[$prod['numero_protetor']] = [ 'ebv' => [], 'qib' => [], 'qic' => []];
+                                    $protetores[$prod['numero_protetor']] = [ 'ebv' => [], 'qib' => [], 'qic' => [], 'qiv' => []];
 
-                                if((array_key_exists($prod->produto_top_id, $this->DbaVendasProdutos->ebericks )) || ((array_key_exists($prod->produto_top_id, $this->DbaVendasProdutos->modulos )) && ($prod->sigla == 'EB033' || $venda->tipo == 'VENDI' || $prod->sigla == 'EB041')))
+                                if((array_key_exists($prod->produto_top_id, $this->DbaVendasProdutos->ebericks )) || ((array_key_exists($prod->produto_top_id, $this->DbaVendasProdutos->modulos )) && ($prod->sigla == 'EB033' || $prod->sigla == 'EB046' || $venda->tipo == 'VENDI' || $prod->sigla == 'EB041')))
                                     $protetores[$prod->numero_protetor]['ebv'][] = $k;
                                 else if(array_key_exists($prod->produto_top_id, $this->DbaVendasProdutos->qibs ))
                                     $protetores[$prod->numero_protetor]['qib'][] = $k;
                                 else if($prod->produto_top_id == 526) // QiCloud
                                     $protetores[$prod->numero_protetor]['qic'][] = $k;
+                                else if($prod->produto_top_id == 939) // QIVISUS
+                                    $protetores[$prod->numero_protetor]['qiv'][] = $k;
                         });
         }
 
@@ -224,7 +226,7 @@ class DbaVendasTable extends Table
                             $mod_qib['QIB'][] = $k;
                         }
                         
-                        if ( ($venda->tipo == 'VENDI' && $mod_qib['edicao'] == 2018) || $mod_qib['edicao'] == 2019 || $mod_qib['edicao'] == 2020 || $prod->valor > 0 ){
+                        if ( ($venda->tipo == 'VENDI' && $mod_qib['edicao'] == 2018) || $mod_qib['edicao'] >= 2019 || $prod->valor > 0 ){
                             $mod_qib['QIB'][] = $k;
                         }
 
@@ -248,6 +250,8 @@ class DbaVendasTable extends Table
 
             if(count($itens_app['qic']) > 0)
                 $itens_app['ebv'] = array_merge($itens_app['ebv'], $itens_app['qic']);
+            if(count($itens_app['qiv']) > 0)
+                $itens_app['ebv'] = array_merge($itens_app['ebv'], $itens_app['qiv']);
 
             if(count($itens_app['ebv']) > 0){
                 // Buscar Aplicaçoes
@@ -465,6 +469,7 @@ class DbaVendasTable extends Table
 
                             if($dba_produto->tipo_aquisicao == 'Full'){
                                 $especiais = 'ATIVAÇÃO';
+                                if($dba_produto->sigla != 'EB046' )
                                 $dba_produto->edicao = 2018;
                                 $condicao['EcmProdutoAplicacao.tabela'] = 'PRE';
                             }
@@ -493,14 +498,27 @@ class DbaVendasTable extends Table
                             $condicao = ['ecm_produto_id' => 515 ]; 
                             $condicao['EcmProdutoAplicacao.codigo'] = 'EB045';
                             $dba_produto->edicao = 2019;
+                        } else if($dba_produto->sigla == 'EB046'){
+                            $modulos = '07 - TIPO';
+                            $condicao['EcmProdutoAplicacao.aplicacao'] = 'MODULO';
+                            $condicao['EcmProdutoAplicacao.codigo'] = $dba_produto->sigla;
+                        } else if($dba_produto->sigla == 'EB045'){
+                            $modulos = '07 - TIPO';
+                            $condicao['EcmProdutoAplicacao.aplicacao'] = 'MODULO';
+                            $condicao['EcmProdutoAplicacao.codigo'] = $dba_produto->sigla;
+                            $condicao = ['ecm_produto_id' => 432 ];
                         }
 
                         if($venda->tipo != 'LANUAL')
                             $ativacao = 'REMOTA'; // CORRIGIR NO Ecm_produto_aplicacao ( OBS.: TODOS MODULOS ESTAO COMO REMOTA )
-                    }else if ($dba_produto->produto_top_id == 526){
+                    }else if ($dba_produto->produto_top_id == 526){  // PLANO ALTOQI QICLOUD
                         $condicao['EcmProdutoAplicacao.aplicacao'] = $dba_produto->aplicacao;
                         $especiais = 'ATIVAÇÃO'; // CORRIGIR!!
                         $modulos = $dba_produto->modulos;
+                    }else if ($dba_produto->produto_top_id == 939){  // QIVISUS
+                        $condicao['EcmProdutoAplicacao.software'] = 'SAS';
+                        $condicao['EcmProdutoAplicacao.tabela'] = 'PRE';
+                        $especiais = 'ATIVAÇÃO';
                     }
 
                     if($search){

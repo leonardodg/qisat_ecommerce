@@ -1510,6 +1510,12 @@ class CarrinhoController extends WscController
                             }else{
                                 $sigla = 'LTEMPFLEX';
                             }
+                        }else if($this->request->data['edicao'] == '21'){
+                            if($this->request->data['tempo-up'] > 1){
+                                $sigla = 'LTEMP21FLEX'.(intval($this->request->data['tempo-up'])*12);
+                            }else{
+                                $sigla = 'LTEMP21FLEX';
+                            }
                         }
                     }
 

@@ -15,6 +15,12 @@ class DbaVendasProdutosTable extends Table
 
     public $pacotes = [
 
+                        685 => [ "edicao" => 2021, "aplicacao" => 'flex', "modulos" => 'light'],  //  'Pacote Flex BIM 2021 - LVit - RMS'	
+                        684 => [ "edicao" => 2021, "aplicacao" => 'flex', "modulos" => 'light'],  //  'Pacote Migração Flex BIM LVIT para LTemp 2021 - RMS'
+                        683 => [ "edicao" => 2021, "aplicacao" => 'flex', "modulos" => 'light'],  //  'Pacote Migração Flex BIM LTemp para LVit 2021 - RMS'
+                        682 => [ "edicao" => 2021, "aplicacao" => 'flex', "modulos" => 'light'],  //  'Pacote Flex BIM 2021 - 36 meses - RMS'
+                        681 => [ "edicao" => 2021, "aplicacao" => 'flex', "modulos" => 'light'],  //  'Pacote Flex BIM 2021 - 24 meses - RMS'
+                        680 => [ "edicao" => 2021, "aplicacao" => 'flex', "modulos" => 'light'],  //  'Pacote Flex BIM 2021 - 12 meses RMS'
                         491 => [ "edicao" => 2020, "aplicacao" => 'flex', "modulos" => 'light'], // "nome" => 'Pacote Flex BIM 2020 - 36 meses - RMS'], //	PFB12
                         490 => [ "edicao" => 2020, "aplicacao" => 'flex', "modulos" => 'light'], // "nome" => 'Pacote Flex BIM 2020 - 24 meses - RMS'], //	PFB12
                         489 => [ "edicao" => 2020, "aplicacao" => 'flex', "modulos" => 'light'], // "nome" => 'Pacote Flex BIM 2020 - 12 meses - RMS'], //	PFB12
@@ -200,6 +206,14 @@ class DbaVendasProdutosTable extends Table
                                         
     public $ebericks = [
 
+                        893 => [ "edicao" => 2021, "aplicacao" => 'pro', "rede" => true ], //SOFTWARE ALTOQI EBERICK 2021 PRO REDE
+                        892 => [ "edicao" => 2021, "aplicacao" => 'pro', "rede" => false ], //SOFTWARE ALTOQI EBERICK 2021 PRO
+                        891 => [ "edicao" => 2021, "aplicacao" => 'plena', "rede" => true ], //SOFTWARE ALTOQI EBERICK 2021 PLENA REDE
+                        890 => [ "edicao" => 2021, "aplicacao" => 'plena', "rede" => false ], //SOFTWARE ALTOQI EBERICK 2021 PLENA
+                        889 => [ "edicao" => 2021, "aplicacao" => 'lite', "rede" => false ], //SOFTWARE ALTOQI EBERICK 2021 LITE
+                        888 => [ "edicao" => 2021, "aplicacao" => 'flex', "rede" => false ], //SOFTWARE ALTOQI EBERICK 2021 FLEX
+                        887 => [ "edicao" => 2021, "aplicacao" => 'basic', "rede" => true ], //SOFTWARE ALTOQI EBERICK 2021 BASIC REDE
+                        886 => [ "edicao" => 2021, "aplicacao" => 'basic', "rede" => false ], //SOFTWARE ALTOQI EBERICK 2021 BASIC
                         825	=> [ "edicao" => 2020, "aplicacao" => 'pro', "rede" =>  true ], // EBV20PRR	ALTOQI EBERICK 2020 PRO REDE
                         824	=> [ "edicao" => 2020, "aplicacao" => 'basic', "rede" => true ], // EBV20BAR	ALTOQI EBERICK 2020 BASIC REDE
                         823	=> [ "edicao" => 2020, "aplicacao" => 'plena', "rede" => true ], // EBV20PLR	ALTOQI EBERICK 2020 PLENA REDE
@@ -226,6 +240,15 @@ class DbaVendasProdutosTable extends Table
                     ];
     
     public $qibs = [
+                    885 => [ "edicao" => 2021, "aplicacao" => '', "rede" => true, 'familia' => null, 'main' => false], //	QiBuilder 2021 Rede
+                    884 => [ "edicao" => 2021, "aplicacao" => 'pro', "rede" => true, 'familia' => null, 'main' => true], //	SOFTWARE QIBUILDER 2021 PRO REDE
+                    883 => [ "edicao" => 2021, "aplicacao" => 'pro', "rede" => false, 'familia' => null, 'main' => true], //	SOFTWARE QIBUILDER 2021 PRO
+                    882 => [ "edicao" => 2021, "aplicacao" => 'plena', "rede" => true, 'familia' => null, 'main' => true], //	SOFTWARE QIBUILDER 2021 PLENA REDE
+                    881 => [ "edicao" => 2021, "aplicacao" => 'plena', "rede" => false, 'familia' => null, 'main' => true], //	SOFTWARE QIBUILDER 2021 PLENA
+                    880 => [ "edicao" => 2021, "aplicacao" => 'flex', "rede" => false, 'familia' => null, 'main' => true], //	SOFTWARE QIBUILDER 2021 FLEX
+                    879 => [ "edicao" => 2021, "aplicacao" => 'basic', "rede" => true, 'familia' => null, 'main' => true], //	SOFTWARE QIBUILDER 2021 BASIC REDE
+                    878 => [ "edicao" => 2021, "aplicacao" => 'basic', "rede" => false, 'familia' => null, 'main' => true], //	SOFTWARE QIBUILDER 2021 BASIC
+                    877 => [ "edicao" => 2021, "aplicacao" => '', "rede" => false, 'familia' => null, 'main' => false], //	QiBuilder 2021  
                     827	=> [ "edicao" => 2020, "aplicacao" => '', "rede" =>  true, 'familia' => null, 'main' => false ], // QIBR 2020	QiBuilder 2020 Rede
                     826	=> [ "edicao" => 2020, "aplicacao" => '', "rede" =>  false, 'familia' => null, 'main' => false ], // QIB 2020	QiBuilder 2020
                     817	=> [ "edicao" => 2020, "aplicacao" => 'pro', "rede" => true, 'familia' => null, 'main' => true ], // QIB2020PRR	QIBUILDER 2020 PRO REDE
@@ -286,6 +309,8 @@ class DbaVendasProdutosTable extends Table
     ];
 
     public $modulos = [
+                        894 =>  [ 'modulo' => "", 'tipo' => "TIPO I"],//	EB046	DIMENSIONAMENTO DE PERFIS METÁLICOS
+                        868 =>  [ 'modulo' => "", 'tipo' => "TIPO I"],//	EB045	LAJES PROTENDIDAS
                         688	=> [ 'modulo' => "top", 'tipo' => "TIPO IV"], //EB043	EFEITO DINÂMICO DEVIDO AO VENTO
                         687	=> [ 'modulo' => "top", 'tipo' => "TIPO III"], //EB044	EXPORTADOR PARA O SAP 2000
                         589	=> [ 'modulo' => "", 'tipo' => "TIPO I"],//EB042	TEMPERATURA E RETRAÇÃO  
@@ -451,6 +476,20 @@ class DbaVendasProdutosTable extends Table
                                     $produtos[$key]['produto_top_id'] = 815;
                                 else if($produtos[$key]['aplicacao'] == 'pro')
                                     $produtos[$key]['produto_top_id'] = 817;
+                            }else if($produtos[$key]['produto_top_id'] == 885){
+                                if($produtos[$key]['aplicacao'] == 'basic')
+                                    $produtos[$key]['produto_top_id'] = 879;
+                                else if($produtos[$key]['aplicacao'] == 'plena')
+                                    $produtos[$key]['produto_top_id'] = 882;
+                                else if($produtos[$key]['aplicacao'] == 'pro')
+                                    $produtos[$key]['produto_top_id'] = 884;
+                            }else if($produtos[$key]['produto_top_id'] == 877){
+                                if($produtos[$key]['aplicacao'] == 'basic')
+                                    $produtos[$key]['produto_top_id'] = 878;
+                                else if($produtos[$key]['aplicacao'] == 'plena')
+                                    $produtos[$key]['produto_top_id'] = 881;
+                                else if($produtos[$key]['aplicacao'] == 'pro')
+                                    $produtos[$key]['produto_top_id'] = 883;
                             }
 
                         }else if(array_key_exists($produto['produto_top_id'],  $this->ebericks )){
@@ -711,6 +750,42 @@ class DbaVendasProdutosTable extends Table
                             $produtos[$key]['produto_top_id'] = 815;
                         else if($produtos[$key]['aplicacao'] == 'pro')
                             $produtos[$key]['produto_top_id'] = 817;
+                    }
+                }else if($produtos[$key]['produto_top_id'] == 885){
+                    if(empty($produtos[$key]['aplicacao'])){
+                        if($app_qib=='basic')
+                            $produtos[$key]['produto_top_id'] = 879;
+                        else if($app_qib=='plena')
+                            $produtos[$key]['produto_top_id'] = 882;
+                        else if($app_qib=='pro')
+                            $produtos[$key]['produto_top_id'] = 884;
+
+                        $produtos[$key]['aplicacao'] = $app_qib;
+                    }else{
+                        if($produtos[$key]['aplicacao'] == 'basic')
+                            $produtos[$key]['produto_top_id'] = 879;
+                        else if($produtos[$key]['aplicacao'] == 'plena')
+                            $produtos[$key]['produto_top_id'] = 882;
+                        else if($produtos[$key]['aplicacao'] == 'pro')
+                            $produtos[$key]['produto_top_id'] = 884;
+                    }
+                }else if($produtos[$key]['produto_top_id'] == 877){
+                    if(empty($produtos[$key]['aplicacao'])){
+                        if($app_qib=='basic')
+                            $produtos[$key]['produto_top_id'] = 878;
+                        else if($app_qib=='plena')
+                            $produtos[$key]['produto_top_id'] = 881;
+                        else if($app_qib=='pro')
+                            $produtos[$key]['produto_top_id'] = 883;
+
+                        $produtos[$key]['aplicacao'] = $app_qib;
+                    }else{
+                        if($produtos[$key]['aplicacao'] == 'basic')
+                            $produtos[$key]['produto_top_id'] = 878;
+                        else if($produtos[$key]['aplicacao'] == 'plena')
+                            $produtos[$key]['produto_top_id'] = 881;
+                        else if($produtos[$key]['aplicacao'] == 'pro')
+                            $produtos[$key]['produto_top_id'] = 883;
                     }
                 }
 
