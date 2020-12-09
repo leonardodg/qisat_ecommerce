@@ -25,7 +25,7 @@ class WscController extends AppController
                 'ADmad/JwtAuth.Jwt' => [
                     'userModel' => 'MdlUser',
                     'passwordHasher' => [
-                        'className' => 'AES',
+                        'className' => 'Aes',
                     ]
                 ]
             ], 'storage' => 'Memory', 'unauthorizedRedirect' => false]);

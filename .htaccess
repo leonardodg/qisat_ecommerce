@@ -3,7 +3,7 @@
     RewriteRule    ^$    webroot/    [L]
     RewriteRule    (.*) webroot/$1    [L]
 
-    #SetEnvIf Origin "http(s)?://(www\.|site-local\.|local-site\.)?(qisat\.dev|qisat\.com\.br|altoqi\.com\.br)$" AccessControlAllowOrigin=$0
+    #SetEnvIf Origin "http(s)?://(www\.|site-local\.|local-site\.|website\.)?(qisat\.dev|qisat\.com\.br|altoqi\.com\.br|qisat\.local)$" AccessControlAllowOrigin=$0
     #Header set Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
 
     #Header set Access-Control-Allow-Credentials true

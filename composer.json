@@ -6,13 +6,16 @@
     "license": "MIT",
     "require": {
         "php": ">=5.5.9",
-        "cakephp/cakephp": "~3.2",
+        "cakephp/cakephp": "3.2",
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "~1.0",
         "cakephp/plugin-installer": "*",
         "josegonzalez/cakephp-upload": "^3.4",
         "xety/cake3-upload": "1.*",
-        "admad/cakephp-jwt-auth": "^2.0"
+        "phpaes/phpaes": "^3.1",
+        "admad/cakephp-jwt-auth": "*",
+        "pagarme/pagarme-php": "^4.1",
+        "guzzlehttp/guzzle": "^6.5"
     },
     "require-dev": {
         "psy/psysh": "@stable",
@@ -26,10 +29,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "src"
-        },
-        "classmap": [
-            "vendor/AES"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -39,8 +39,7 @@
     },
     "scripts": {
         "post-install-cmd": "App\\Console\\Installer::postInstall",
-        "post-create-project-cmd": "App\\Console\\Installer::postInstall",
-        "post-autoload-dump": "Cake\\Composer\\Installer\\PluginInstaller::postAutoloadDump"
+        "post-create-project-cmd": "App\\Console\\Installer::postInstall"
     },
     "minimum-stability": "stable",
     "prefer-stable": true

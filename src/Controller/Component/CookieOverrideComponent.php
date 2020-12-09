@@ -9,7 +9,7 @@
 namespace App\Controller\Component;
 
 
-use AES\SecurityAES;
+use App\Auth\SecurityAES;
 use Cake\Controller\Component\CookieComponent;
 use Cake\I18n\Time;
 

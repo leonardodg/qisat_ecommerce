@@ -2,7 +2,6 @@
 
 namespace App\Auth;
 
-use AES\SecurityAES;
 use Cake\Auth\AbstractPasswordHasher;
 
 class AESPasswordHasher extends AbstractPasswordHasher

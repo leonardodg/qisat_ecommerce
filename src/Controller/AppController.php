@@ -63,7 +63,7 @@ class AppController extends Controller
                     'fields' => ['username' => 'username', 'password' => 'password'],
                     'userModel' => 'MdlUser',
                     'passwordHasher' => [
-                        'className' => 'AES',
+                        'className' => 'Aes',
                     ]
                 ]
             ]
