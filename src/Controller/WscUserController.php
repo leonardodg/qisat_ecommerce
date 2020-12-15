@@ -25,6 +25,8 @@ use Carrinho\Model\Entity\EcmCarrinhoItem;
 use Firebase\JWT\JWT;
 use Produto\Model\Entity\EcmTipoProduto;
 use Repasse\Model\Entity\EcmRepasse;
+use App\Model\Entity\MdlUser;
+
 
 class WscUserController  extends WscController
 {
@@ -684,31 +686,46 @@ class WscUserController  extends WscController
         $user = null;
         $atualizacao = false;
         if (!$this->request->is('post')) {
-            $retorno = ['sucesso' => false, 'mensagem' => __('Este Web Service não aceita esse tipo de requisição')];
+            $retorno = ['sucesso' => false, 'mensagem' => __('Este Web Service não aceita esse tipo de requisição'), 'erro' => 1];
         } else if (isset($this->Auth->user()['id']) && isset($this->request->data['id']) &&
                 $this->Auth->user()['id'] != $this->request->data['id']) {
-            $retorno = ['sucesso' => false, 'mensagem' => __('Não foi possivel alterar o usuário')];
+            $retorno = ['sucesso' => false, 'mensagem' => __('Não foi possivel alterar o usuário'), 'erro' => 2];
         } else {
             $this->loadModel('MdlUser');
             $this->loadComponent('BaseExterna');
+            $numeroValido = false;
+            $emailValido = false;
+            
             if (!isset($this->request->data['id']) && isset($this->request->data['email']) &&
                 (isset($this->request->data['cpf']) || isset($this->request->data['cnpj']) || isset($this->request->data['numero']))
             ) {
                 $email = isset($this->request->data['email']) ? $this->request->data['email'] : '';
+                $emailValido = filter_var($email, FILTER_VALIDATE_EMAIL);
+                
                 if (isset($this->request->data['cpf'])) {
-                    $this->request->data['numero'] = $this->request->data['cpf'];
+                    $cpf = $this->request->data['cpf'];
+
+                    $this->request->data['numero'] = $cpf;
                     unset($this->request->data['cpf']);
+
+                    $numeroValido = MdlUser::validarCPF($cpf);
                 } else if (isset($this->request->data['cnpj'])) {
-                    $this->request->data['numero'] = $this->request->data['cnpj'];
+                    $cnpj = $this->request->data['cnpj'];
+
+                    $this->request->data['numero'] = $cnpj;
                     unset($this->request->data['cnpj']);
+                    
+                    $numeroValido = MdlUser::validarCNPJ($cnpj);
                 }
+
                 $numero = isset($this->request->data['numero']) ? $this->request->data['numero'] : '';
                 if ($user = $this->BaseExterna->verificarUsuario($email, $numero)) {
                     if ($user !== true)
                         $this->request->data['id'] = $this->BaseExterna->importarUsuario($user['ChaveAltoQi'], $user['SenhaInternet'])->id;
                 }
             }
-            if($user !== true) {
+            
+            if($user !== true && $numeroValido && $emailValido) {
                 if (($id = $this->request->data('id')) && $this->MdlUser->exists(['MdlUser.id' => $id])) {
                     $mdlUser = $this->MdlUser->get($id);
                     $this->request->data['timemodified'] = time();
@@ -783,6 +800,7 @@ class WscUserController  extends WscController
                         $mdlUser->mdl_user_endereco = $mdlUserEndereco;
                     } else {
                         $retorno['mensagem'] = __('Não foi possivel cadastrar/alterar o endereço do usuário.');
+                        $retorno['erro'] = 3;
                     }
 
                     if ($this->MdlUser->MdlUserDados->exists(['mdl_user_id' => $mdlUser->id])) {
@@ -800,7 +818,9 @@ class WscUserController  extends WscController
                             $retorno['mensagem'] = "";
                         else
                             $retorno['mensagem'] .= "\n";
+
                         $retorno['mensagem'] .= __('Não foi possivel cadastrar/alterar os dados do usuário.');
+                        $retorno['erro'] = 4;
                     }
 
                     $idAlternativeHost = $this->request->session()->read('alternativeHostId');
@@ -818,26 +838,38 @@ class WscUserController  extends WscController
                         if(!$atualizacao) {
                             if (isset($mdlUser->username) && isset($mdlUser->idnumber))
                                 $this->MdlUser->save($mdlUser);
-                            else
+                            else {
                                 $retorno = ['sucesso' => false, 'mensagem' => __('Não foi possivel cadastrar/alterar a chave do usuario')];
+                                $retorno['erro'] = 5;
+                            }
                         }
                     } else {
                         $retorno = ['sucesso' => true, 'mensagem' => __('Não foi possivel exportar o usuário')];
+                        $retorno['erro'] = 6;
                     }
 
                 } else {
                     $retorno = ['sucesso' => false, 'mensagem' => __('Não foi possivel cadastrar/alterar o usuário')];
+                    $retorno['erro'] = 7;
                 }
             }else{
                 $mensagem = '';
+                $codigoErro = 0;
                 if($this->MdlUser->exists(['email' => $this->request->data['email']])){
                     $mensagem = __('E-mail já registrado');
+                    $codigoErro = 8;
                 }elseif($this->MdlUser->MdlUserDados->exists(['numero' => $this->request->data['numero']])){
                     $mensagem = __('CPF/CNPJ já registrado');
+                    $codigoErro = 9;
+                }elseif(!$emailValido){
+                    $mensagem = __('E-mail inválido');
+                    $codigoErro = 10;
+                }elseif(!$numeroValido){
+                    $mensagem = __('CPF/CNPJ inválido');
+                    $codigoErro = 11;
                 }
 
-
-                $retorno = ['sucesso' => false, 'mensagem' => $mensagem];
+                $retorno = ['sucesso' => false, 'mensagem' => $mensagem, 'erro' => $codigoErro];
             }
         }
 
