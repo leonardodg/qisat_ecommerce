@@ -42,5 +42,11 @@
         "post-create-project-cmd": "App\\Console\\Installer::postInstall"
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "aura/installer-default": true,
+            "cakephp/plugin-installer": true
+        }
+    }
 }

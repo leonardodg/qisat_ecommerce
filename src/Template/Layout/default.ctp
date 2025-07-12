@@ -244,5 +244,21 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     </footer> <!-- footer-container -->
 
     <?= $this->Html->script('paginas-favoritas.js') ?>
+
+    <script type="text/javascript" src="js/es6-promise.js"></script>
+    <script type="text/javascript" src="js/cross-storage-master/client.js"></script>
+    <script type="text/javascript">
+        var storage = new CrossStorageClient('https://website.qisat.local/hub.html');
+
+        storage.onConnect()
+        .then(function() {
+        return storage.get('token', 'user');
+        }).then(function(res) {
+        console.log(res); // ['foo', 'bar']
+        })['catch'](function(err) {
+        console.log(err);
+        });
+
+    </script>
 </body>
 </html>

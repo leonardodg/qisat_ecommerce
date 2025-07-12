@@ -18,6 +18,10 @@ class CookieOverrideComponent extends CookieComponent
 
     protected function _write($name, $value)
     {
+
+        // echo $this->getKey();
+        // die;
+
         $aes = new SecurityAES($this->getKey());
 
         $config = $this->configKey($name);

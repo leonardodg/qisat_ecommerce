@@ -1,26 +1,81 @@
-# CakePHP Application Skeleton
+# Plataform Moodle - Company QiSat
 
-[![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
-[![License](https://img.shields.io/packagist/l/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
+## 💻 Desciption
+**(DEPRECATED)**
+System website used to company QiSat as painel manage intregation with Website ( FrontEnd - AngularJS ) and plataform Moodle ( PHP )
 
-A skeleton for creating applications with [CakePHP](http://cakephp.org) 3.x.
+<img width="800" height="600" alt="homepage" src="https://github.com/leonardodg/website/blob/main/src/images/qisat_ecommerce.png?raw=true">
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+## 📋 Specification
 
-## Installation
+- Moodle Version: 2.9.3 (Build: 20151109)
+- PHP Version: PHP 5.6.40 (cli) (built: Jan 23 2019 00:10:05)
+- Server version: Apache/2.4.25 (Debian)
+- Docker: Debian GNU/Linux 9.13 (stretch)
+- MySQL: mysql  Ver 14.14 Distrib 5.7.44
 
-1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+## 🚀 Quick Start
 
-If Composer is installed globally, run
+### Prerequisites
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Docker](https://www.docker.com/products/docker-desktop/)
+
+
+### Installation and Running
+
+1. Clone all projects repository:
 ```bash
-composer create-project --prefer-dist cakephp/app [app_name]
+   git clone https://github.com/leonardodg/qisat_docker.git docker
+   git clone https://github.com/leonardodg/qisat_moodle.git moodle
+   git clone https://github.com/leonardodg/qisat_ecommerce.git ecommerce
+   git clone https://github.com/leonardodg/qisat_website.git website
 ```
 
-You should now be able to visit the path to where you installed the app and see
-the setup traffic lights.
+2. Copy Config:
+```bash
+   cd ecommerce
+   cp config/app.default.php config/app.php
+```
 
-## Configuration
+3. Run docker:
+```bash
+   cd docker
+   docker compose up -d --build
+```
 
-Read and edit `config/app.php` and setup the 'Datasources' and any other
-configuration relevant for your application.
+5. Install dependencies:
+```bash
+   cd moodle
+   npm install
+   composer install
+   composer dump-autoload
+```
+
+6. Access the website in your browser:
+```   https://ecommerce.qisat.local/ ```
+
+
+## 🛠 Project Structure
+
+```
+QiSat
+├── docker
+├── ecommerce ✔️
+├── moodle
+├── moodledata
+└── website
+```
+
+## 🌐 Links
+
+- [docker](https://github.com/leonardodg/qisat_docker) - branch: master
+- [ecommerce](https://github.com/leonardodg/qisat_ecommerce) - branch: master
+- [moodle](https://github.com/leonardodg/qisat_moodle) - branch: MOODLE_29_QISAT
+- [website](https://github.com/leonardodg/qisat_website) - branch: master
+
+ ## 🤝 Contributing
+- Teams Developer QiSat
+
+ ## 📮 Contact
+- LeonardoDG - [@le0dg](https://www.linkedin.com/in/le0dg)
+- Website Link: [https://leodg.dev](https://leodg.dev)

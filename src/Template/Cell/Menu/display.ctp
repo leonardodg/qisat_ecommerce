@@ -29,7 +29,7 @@ $menuHtml = '';
 
         <h3 class="ui-state-default">
             <span class="ui-accordion-header-icon glyphicon glyphicon-education"></span>
-            <?= $this->Html->link(__('Plataforma'), 'http://'.$linkMoodle)?>
+            <?= $this->Html->link(__('Plataforma'), 'https://'.$linkMoodle)?>
         </h3>
     </div>
     <div id="menu-accordion">

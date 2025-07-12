@@ -15,14 +15,13 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-// Allow from any origin
-if (isset($_SERVER['HTTP_ORIGIN'])) {
-    header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
-    header('Access-Control-Allow-Credentials: true');
-    header('Access-Control-Max-Age: 86400');    // cache for 1 day
-    header("Access-Control-Allow-Headers: X-Authorization,X-Requested-With,Content-Type,Origin,Accept,Authorization");
-    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-}
+
+header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+header('Access-Control-Allow-Credentials: true');
+header('Access-Control-Max-Age: 86400');    // cache for 1 day
+header("Access-Control-Allow-Headers: X-Authorization,X-Requested-With,Content-Type,Origin,Accept,Authorization");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+
 
 // for built-in server
 if (php_sapi_name() === 'cli-server') {
@@ -39,6 +38,14 @@ require dirname(__DIR__) . '/config/bootstrap.php';
 use App\Network\Request;
 use Cake\Network\Response;
 use Cake\Routing\DispatcherFactory;
+
+// use PhpAes\Aes;
+
+// $aes = new Aes('dMOqr2ZsT1r7cCYD');
+
+// echo $aes->decrypt(base64_decode("u+tVD0bZNFU5jqFhvRzfJg=="));
+// die();
+
 
 $dispatcher = DispatcherFactory::create();
 $dispatcher->dispatch(
